@@ -1,116 +1,120 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>  Feedback Form</title>
+  <title>Feedback Form</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Link external CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="main">
-    <h3>Employee Growth Strategy Survey </h3>
+    <h3>Employee Growth Strategy Survey</h3>
     <h5>~Vighnotech & Vighnesh Inc</h5>
-     <h5>(No worry to login , just fill and express yourslef) </h5>
+    <h5>(No login needed—just fill and express yourself)</h5>
 
     <form method="post" id="form" enctype="multipart/form-data">
-     
-    <div class="form-outer">
-        
-  <label for="rating">1.Satisfaction in office environment & culture
-    <br>
-   
-    <!-- <span id="ratingValue">5</span>
-    <span id="ratingText" class="rating-text">Good</span> -->
+      
+      <!-- 1. Satisfaction Slider -->
+      <div class="form-outer">
+        <label for="rating">1. Satisfaction in office environment & culture</label>
+        <input
+          type="range"
+          id="rating"
+          name="satisfaction"
+          min="0"
+          max="10"
+          value="5"
+        />
+        <!-- Live‑update values -->
+        <span id="ratingValue">5</span>  
+        <span id="ratingText">Good</span>
+        <div class="rating-legend">
+          <span>0 = Poor 😓</span>
+          <span>5 = Good 🙂</span>
+          <span>10 = Happy! 😄</span>
+        </div>
+      </div>
 
-  </label>
-  
-  <div class="rating-legend">
-    <span>0 = Poor &#128533; </span>
-    <span>5 = Good &#128522;</span>
-    <span>10 = happy! &#128523;	</span>
-  </div>
-</div>
-<input
-  type="range"
-  id="rating"
-  name="rating"
-  min="0"
-  max="10"
-  value="5"
-/>
-
-      <!-- <div class="form-outer">
-        <label>Phone Number</label>
-        <input type="text" name="phone_number" placeholder="Enter your phone number" />
-      </div> -->
-
-
-   <div class="form-outer">
-        <label>If the company could offer anything to boost your professional growth or tech skills, what would you personally find most helpful?</label>
+      <!-- 2. Growth Suggestion -->
+      <div class="form-outer">
+        <label for="suggestion">
+          2. If the company could offer anything to boost your professional growth or tech skills, what would you personally find most helpful?
+        </label>
         <textarea
-          name="description"
+          id="suggestion"
+          name="suggestion"
           rows="2"
-          placeholder="Review here..."
+          placeholder="Example: More mentorship or online certifications..."
         ></textarea>
       </div>
 
+      <!-- 3. Opportunities -->
       <div class="form-outer">
-        <label>2.Opportunities you would love if company offer (may select multiple) </label>
-        <div class="radio-group">
-          <label><input  type="checkbox" name="hostel" value="Mentorship program"   /> Mentorship program</label>
-          <label><input type="checkbox" name="hostel" value=" events/workshops" /> Internal company events/workshops</label>
-           <label><input type="checkbox" name="hostel" value="Online courses/ training" /> Online courses/ training</label>
-            <label><input type="checkbox" name="hostel" value="TSkill-building workshops" /> Skill-building workshops</label>
-            <label><input type="checkbox" name="hostel" value="Casual team bonding -Fun Activity" /> Casual team bonding -Fun Activity </label>
-            <label><input type="checkbox" name="hostel" value="Recognition programs for small wins" /> Recognition programs for small wins</label>
-        
-        <label><input type="checkbox" name="hostel" value="Career growth & mentorship talks" /> Career growth & mentorship talks </label>
-            <label><input type="checkbox" name="hostel" value="Innovation hackathons / side-project days" /> Innovation hackathons / side-project days </label>
-        
-                </div>
+        <label>3. Opportunities you would love (select multiple)</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="opportunities[]" value="Mentorship program" /> Mentorship program</label>
+          <label><input type="checkbox" name="opportunities[]" value="Internal events/workshops" /> Internal events/workshops</label>
+          <label><input type="checkbox" name="opportunities[]" value="Online courses/training" /> Online courses/training</label>
+          <label><input type="checkbox" name="opportunities[]" value="Skill-building workshops" /> Skill-building workshops</label>
+          <label><input type="checkbox" name="opportunities[]" value="Casual team bonding" /> Casual team bonding</label>
+          <label><input type="checkbox" name="opportunities[]" value="Recognition programs" /> Recognition programs</label>
+          <label><input type="checkbox" name="opportunities[]" value="Career talks" /> Career growth & mentorship talks</label>
+          <label><input type="checkbox" name="opportunities[]" value="Innovation hackathons" /> Innovation hackathons/side‑project days</label>
+        </div>
+      </div>
+
+      <!-- 4. Work‑Life Balance -->
+      <div class="form-outer">
+        <label>4. Do you have work‑life balance?</label>
+        <div class="radio-grid">
+          <label><input type="radio" name="workLife" value="Yes" /> <span>Yes</span></label>
+          <label><input type="radio" name="workLife" value="No" /> <span>No</span></label>
+        </div>
+      </div>
+
+      <!-- 5. Work Culture Satisfaction -->
+      <div class="form-outer">
+        <label>5. Are you satisfied with work culture?</label>
+        <div class="radio-grid">
+          <label><input type="radio" name="workCulture" value="Yes" /> <span>Yes</span></label>
+          <label><input type="radio" name="workCulture" value="No" /> <span>No</span></label>
+        </div>
+      </div>
+
+      <!-- 6. Likes & Dislikes -->
+      <div class="form-outer">
+        <label for="likes">6. Anything you like about your office/work?</label>
+        <input
+          type="text"
+          id="likes"
+          name="likes"
+          placeholder="Ex: Friendly teammates, flexible hours..."
+        />
       </div>
 
       <div class="form-outer">
-  <label>3.You have work-Life balance   </label>
-  <div class="radio-grid">
-    <label><input type="radio" name="mealType" value="Balance" ><span>Yes </span></label>
-    <label><input type="radio" name="mealType" value="No_Balance"><span>No</span></label>
-
-  </div>
-</div>
-
-<div class="form-outer">
-  <label>4. Satisfied with work culture     </label>
-  <div class="radio-grid">
-     <label><input type="radio" name="mealType" value="Satisfied" ><span>Yes </span></label>
-    <label><input type="radio" name="mealType" value="No_satisfy"><span>No</span></label>
-  </div>
-</div>
- 
- <div class="form-outer">
-        <label>Any thing you like in your Office/work </label>
-        <input type="text" name="name" placeholder="Enter your name"   />
-      </div>
-<div class="form-outer">
-        <label>Any thing you dislike in your Office/work </label>
-        <input type="text" name="name" placeholder="Enter your name"   />
+        <label for="dislikes">7. Anything you dislike about your office/work?</label>
+        <input
+          type="text"
+          id="dislikes"
+          name="dislikes"
+          placeholder="Ex: Long meetings, unclear tasks..."
+        />
       </div>
 
-
-       
-
+      <!-- 8. Final Review -->
       <div class="form-outer">
-        <label>Your Review!</label>
+        <label for="review">8. Anything you'd like to share or suggest?</label>
         <textarea
-          name="description"
-          rows="2"
-          placeholder="Review here..."
+          id="review"
+          name="review"
+          rows="3"
+          placeholder="Type your feedback here..."
         ></textarea>
       </div>
 
+      <!-- Submit Button -->
       <div class="form-outer">
         <button type="submit" id="submitBtn">
           Submit <span id="loader">⏳</span>
@@ -119,20 +123,14 @@
     </form>
   </div>
 
+  <!-- Footer -->
   <footer>
-    by <strong>Harshit Gupta </strong> 
-     <a href="https://www.linkedin.com/in/harshitgupta2510/" target="_blank" class="linkedin">
+    by <strong>Harshit Gupta</strong>
+    <a href="https://www.linkedin.com/in/harshitgupta2510/" target="_blank" class="linkedin">
       <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" /> LinkedIn
-    </a> 
-   
-    <!-- <a href="https://www.instagram.com/acha_harshit/" target="_blank" class="instagram">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /> Instagram
-    </a> -->
+    </a>
   </footer>
 
-  <!-- Link external JS -->
   <script src="script.js"></script>
 </body>
 </html>
-
-
