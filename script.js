@@ -1,9 +1,9 @@
-const url = "https://script.google.com/macros/s/AKfycbx8YXFH7crHLncbJf7wnC-eAKsWzFoEhcs6V759srnM6LM05Wm0x8Js-Z5WTECnY8S7EA/exec";
+const url = "https://script.google.com/macros/s/AKfycbxaomcqsbjAXuG9H3RDsgPlSq8np3xu4FH8vXR1LrG3cWi2A_936eXKOU5uT_yLAWkKkQ/exec";
 const form = document.querySelector("#form");
 const submitBtn = document.getElementById("submitBtn");
 const loader = document.getElementById("loader");
 
-// Slider live-update logic
+// Slider live-update logic >
 const ratingInput     = document.getElementById("rating");
 const ratingValueSpan = document.getElementById("ratingValue");
 const ratingTextDiv   = document.getElementById("ratingText");

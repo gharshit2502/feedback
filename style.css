@@ -8,7 +8,7 @@
 
 /* Body Styling */
 body {
-  background-color: aquamarine;
+  background-color: rgb(132, 193, 255);
   min-height: 100vh;
   padding-bottom: 60px; /* space for fixed footer */
   display: flex;
