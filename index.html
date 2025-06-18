@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Mess Feedback Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main">
+    <h3>"जेवन झाला का"</h3>
+    <h5>~Vasantdada Pratishthan’s Boys & Girls Hostel Kandivali</h5>
+
+    <form method="post" id="form" enctype="multipart/form-data">
+      <div class="form-outer">
+        <label>Name<span class="required">*</span></label>
+        <input type="text" name="name" placeholder="Enter your name" required />
+      </div>
+
+      <div class="form-outer">
+        <label>Phone Number</label>
+        <input type="text" name="phone_number" placeholder="Enter your phone number" />
+      </div>
+
+      <div class="form-outer">
+        <label>Hostel Wing <span class="required">*</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="hostel" value="Boys" required /> Boys &#128102;</label>
+          <label><input type="radio" name="hostel" value="Girls" /> Girls &#128103;</label>
+        </div>
+      </div>
+
+      <div class="form-outer">
+  <label>Meal Type <span style="color: red;">*</span></label>
+  <div class="radio-grid">
+    <label><input type="radio" name="mealType" value="Breakfast" required><span>Breakfast &#127749;</span></label>
+    <label><input type="radio" name="mealType" value="Lunch"><span>Lunch &#127774;</span></label>
+    <label><input type="radio" name="mealType" value="Snack"><span>Snack &#127751;</span></label>
+    <label><input type="radio" name="mealType" value="Dinner"><span>Dinner &#127771;</span></label>
+  </div>
+</div>
+
+
+      <div class="form-outer">
+  <label for="rating">Rating (0-10):
+    <span id="ratingValue">5</span>
+    <span id="ratingText" class="rating-text">Good</span>
+
+  </label>
+  <div class="rating-legend">
+    <span>0 = Poor &#128533; </span>
+    <span>5 = Good &#128522;</span>
+    <span>10 = Tasty! &#128523;	</span>
+  </div>
+</div>
+<input
+  type="range"
+  id="rating"
+  name="rating"
+  min="0"
+  max="10"
+  value="5"
+/>
+
+       
+
+      <div class="form-outer">
+        <label>Your Review!</label>
+        <textarea
+          name="description"
+          rows="2"
+          placeholder="Review here..."
+        ></textarea>
+      </div>
+
+      <div class="form-outer">
+        <button type="submit" id="submitBtn">
+          Submit <span id="loader">⏳</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    by <strong>Vighnotech & Vighnesh </strong> 
+    <!-- <a href="https://www.linkedin.com/in/harshitgupta2510/" target="_blank" class="linkedin">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" /> LinkedIn
+    </a> -->
+   
+    <!-- <a href="https://www.instagram.com/acha_harshit/" target="_blank" class="instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /> Instagram
+    </a> -->
+  </footer>
+
+  <!-- Link external JS -->
+  <script src="script.js"></script>
+</body>
+</html>

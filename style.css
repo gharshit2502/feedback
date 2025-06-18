@@ -1,0 +1,241 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Body Styling */
+body {
+  background-color: aquamarine;
+  min-height: 100vh;
+  padding-bottom: 60px; /* space for fixed footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Container */
+.main {
+  width: 100%;
+  max-width: 400px;
+  background-color: azure;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.main h3 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.main h5 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form Fields */
+.form-outer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-outer label {
+  font-weight: bold;
+}
+
+.form-outer input,
+.form-outer textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+/* Required Asterisk */
+.required {
+  color: red;
+  margin-left: 2px;
+}
+
+/* Radio Button Group */
+.radio-group {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Rating Slider */
+#rating {
+  width: 100%;
+  cursor: pointer;
+}
+
+.rating-text {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.rating-legend {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Submit Button */
+.form-outer button {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.form-outer button:disabled {
+  background-color: #5a9bd4;
+  cursor: not-allowed;
+}
+
+#loader {
+  display: none;
+}
+
+/* Footer Styling */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #f1f1f1;
+  color: #333;
+  border-top: 1px solid #ccc;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+footer a {
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 10px;
+}
+
+footer a.linkedin {
+  color: #0077B5;
+}
+
+footer a.instagram {
+  color: #E4405F;
+}
+
+footer img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Container for message and links */
+.footer-container {
+  text-align: center;
+  padding: 10px;
+}
+
+/* Message line: force no wrapping */
+.footer-message {
+  white-space: nowrap;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* Social links container - inline links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* On wider screens, all can be inline if needed */
+@media (min-width: 481px) {
+  .footer-message {
+    white-space: normal;
+  }
+  .social-links {
+    justify-content: flex-start;
+  }
+}
+
+
+.radio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.radio-grid label {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.radio-grid input[type="radio"] {
+  margin-right: 8px;
+}
+
+.radio-grid input[type="radio"]:checked + span {
+  font-weight: bold;
+  color: #007BFF;
+}
+.radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #007bff;
+}
+
+.radio-group label:hover {
+  border-color: #007bff;
+  background-color: #eef6ff;
+}
+
+.radio-group input[type="radio"]:checked + label {
+  border-color: #007bff;
+  background-color: #d0eaff;
+}
