@@ -41,3 +41,5 @@ form.addEventListener("submit", (e) => {
       loader.style.display = "none";
     });
 });
+// document.getElementById("form").reset();
+
