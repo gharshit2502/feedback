@@ -14,9 +14,10 @@
     <form method="post" id="form">
       <div class="form-outer">
         <label>1. Satisfaction in office environment & culture</label>
+        <div>Value:  <span id="ratingValue"> 5 </span>
+        <span id="ratingText">Good</span></div> 
         <input type="range" id="rating" name="rating" min="0" max="10" value="5" />
-        <!-- <span id="ratingValue">5</span>
-        <span id="ratingText">Good</span> -->
+       
       </div>
 
       <div class="form-outer">
@@ -36,25 +37,25 @@
 </div>
 
 
-      <div class="form-outer">
+      <div class="inline-group">
   <label>4. Do you have work-life balance?</label>
-  <div style="display: flex; gap: 20px; align-items: center; margin-top: 8px;">
-    <label style="display: flex; align-items: center; gap: 5px; border: 1px solid #030303; padding: 10px; border-radius: 8px; ">
+  <div style="display: flex; gap: 20px; align-items: center; margin-top: 8px;border: 0.1px solid #ffffff; padding: 10px; border-radius: 8px;">
+    <label style="display: flex; align-items: center; gap: 5px;  ">
       <input type="radio" name="work_life_balance" value="Yes" /> Yes
     </label>
-    <label style="display: flex; align-items: center; gap: 5px; border: 1px solid #030303; padding: 10px; border-radius: 8px;">
+    <label style="display: flex; align-items: center; gap: 5px;  ">
       <input type="radio" name="work_life_balance" value="No" /> No
     </label>
   </div>
 </div>
 
-      <div class="form-outer">
+      <div class="inline-group">
   <label>5. Are you satisfied with work culture?</label>
-  <div style="display: flex; gap: 20px; align-items: center; margin-top: 8px;  ">
-    <label style="display: flex; align-items: center; gap: 5px;border: 1px solid #030303; padding: 10px; border-radius: 8px;">
+  <div style="display: flex; gap: 20px; align-items: center; margin-top: 8px; border: 0.1px solid #ffffff; padding: 10px; border-radius: 8px; ">
+    <label style="display: flex; align-items: center; gap: 5px; ">
       <input type="radio" name="work_culture" value="Yes" /> Yes
     </label>
-    <label style="display: flex; align-items: center; gap: 5px;border: 1px solid #030303; padding: 10px; border-radius: 8px;">
+    <label style="display: flex; align-items: center; gap: 5px;">
       <input type="radio" name="work_culture" value="No" /> No
     </label>
   </div>
