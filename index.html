@@ -15,33 +15,51 @@
       <div class="form-outer">
         <label>1. Satisfaction in office environment & culture</label>
         <input type="range" id="rating" name="rating" min="0" max="10" value="5" />
-        <span id="ratingValue">5</span>
-        <span id="ratingText">Good</span>
+        <!-- <span id="ratingValue">5</span>
+        <span id="ratingText">Good</span> -->
       </div>
 
       <div class="form-outer">
-        <label>2. What would help your professional growth?</label>
+        <label>2. If company could offer anything to boost your professional growth or tech skill, what would you personnally find the most Helpfull?</label>
         <textarea name="growth_suggestion" rows="2" placeholder="Your suggestion..."></textarea>
       </div>
 
-      <div class="form-outer">
-        <label>3. Opportunities you’d love</label>
-        <label><input type="checkbox" name="opportunities" value="Mentorship" /> Mentorship</label>
-        <label><input type="checkbox" name="opportunities" value="Workshops" /> Workshops</label>
-        <label><input type="checkbox" name="opportunities" value="Courses" /> Online Courses</label>
-      </div>
+     <div class="form-outer">
+  <label>3. Opportunities you’d love </label>
+  <label><input type="checkbox" name="opportunities[]" value="Mentorship Programs" /> Mentorship Programs</label>
+  <label><input type="checkbox" name="opportunities[]" value="Skill-building Workshops" /> Skill-building Workshops</label>
+  <label><input type="checkbox" name="opportunities[]" value="Wellness Sessions" /> Wellness & Mental Health Sessions</label>
+  <label><input type="checkbox" name="opportunities[]" value="Online Training" /> Online Courses & Training</label>
+  <label><input type="checkbox" name="opportunities[]" value="Team Bonding" /> Casual Team Bonding Activities</label>
+  <label><input type="checkbox" name="opportunities[]" value="Career Talks" /> Career Growth & Mentorship Talks</label>
+  <label><input type="checkbox" name="opportunities[]" value="Recognition Programs" /> Recognition & Appreciation Programs</label>
+</div>
+
 
       <div class="form-outer">
-        <label>4. Do you have work-life balance?</label>
-        <label><input type="radio" name="work_life_balance" value="Yes" /> Yes</label>
-        <label><input type="radio" name="work_life_balance" value="No" /> No</label>
-      </div>
+  <label>4. Do you have work-life balance?</label>
+  <div style="display: flex; gap: 20px; align-items: center; margin-top: 8px;">
+    <label style="display: flex; align-items: center; gap: 5px; border: 1px solid #030303; padding: 10px; border-radius: 8px; ">
+      <input type="radio" name="work_life_balance" value="Yes" /> Yes
+    </label>
+    <label style="display: flex; align-items: center; gap: 5px; border: 1px solid #030303; padding: 10px; border-radius: 8px;">
+      <input type="radio" name="work_life_balance" value="No" /> No
+    </label>
+  </div>
+</div>
 
       <div class="form-outer">
-        <label>5. Are you satisfied with work culture?</label>
-        <label><input type="radio" name="work_culture" value="Yes" /> Yes</label>
-        <label><input type="radio" name="work_culture" value="No" /> No</label>
-      </div>
+  <label>5. Are you satisfied with work culture?</label>
+  <div style="display: flex; gap: 20px; align-items: center; margin-top: 8px;  ">
+    <label style="display: flex; align-items: center; gap: 5px;border: 1px solid #030303; padding: 10px; border-radius: 8px;">
+      <input type="radio" name="work_culture" value="Yes" /> Yes
+    </label>
+    <label style="display: flex; align-items: center; gap: 5px;border: 1px solid #030303; padding: 10px; border-radius: 8px;">
+      <input type="radio" name="work_culture" value="No" /> No
+    </label>
+  </div>
+</div>
+
 
       <div class="form-outer">
         <label>6. Anything you like in work</label>
