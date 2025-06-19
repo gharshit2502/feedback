@@ -13,7 +13,7 @@
   font-family: sans-serif;
 }
 
-/* Body Styling */
+
 body {
   background-color: rgb(132, 193, 255);
   color: var(--text);
@@ -31,7 +31,6 @@ input:focus, textarea:focus {
 }
 
 
-/* Main Container */
 .main {
   width: 100%;
   max-width: 400px;
@@ -102,7 +101,6 @@ input:focus, textarea:focus {
   margin-left: 2px;
 }
 
-/* Radio Button Group */
 .radio-group {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -138,7 +136,6 @@ input:focus, textarea:focus {
   background-color: #d0eaff;
 }
 
-/* Checkbox Group Styling */
 .checkbox-group {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -173,7 +170,6 @@ input:focus, textarea:focus {
   color: #007bff;
 }
 
-/* Rating Slider */
 #rating {
   width: 100%;
   cursor: pointer;
@@ -192,7 +188,6 @@ input:focus, textarea:focus {
   justify-content: space-between;
 }
 
-/* Submit Button */
 .form-outer button {
   /* background-color: #008CBA; */
   color: white;
@@ -220,13 +215,12 @@ input:focus, textarea:focus {
   display: none;
 }
 .inline-group {
-  /* display: flex; */
+
   gap: 1rem;
   align-items: center;
   margin-top: 0.5rem;
 }
 
-/* Footer Styling */
 footer {
   position: fixed;
   bottom: 0;
@@ -265,13 +259,11 @@ footer img {
   height: 18px;
 }
 
-/* Container for message and links */
 .footer-container {
   text-align: center;
   padding: 10px;
 }
 
-/* Message line: force no wrapping */
 .footer-message {
   white-space: nowrap;
   margin-bottom: 8px;
@@ -295,7 +287,6 @@ footer img {
 }
 
 
-/* Stack checkboxes on small screens */
 @media (max-width: 400px) {
   .checkbox-group {
     grid-template-columns: 1fr;
