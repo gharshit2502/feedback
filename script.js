@@ -1,4 +1,4 @@
-const url = "https://script.google.com/macros/s/AKfycbxNJ-e3DAeb-s3b63HwEyeO2YgPwfzibdM6aRioqUQnEuPqO32eSEKNNxMUSUytwKWjdA/exec";
+const url = "https://script.google.com/macros/s/AKfycbxCJLg5NEvPYwpqco4JmHKPIax3sw1LLa86DYy7PNtFy3gph6pOfhWZA1IObamFqkZblw/exec";
 
 const form = document.querySelector("#form");
 const submitBtn = document.getElementById("submitBtn");
