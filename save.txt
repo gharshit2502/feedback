@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Feedback Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main">
+    <h3>Employee Growth Strategy Survey</h3>
+    <h5>~Vighnotech & Vighnesh Inc</h5>
+    <h5>(No login needed—just fill and express yourself)</h5>
+
+    <form method="post" id="form" enctype="multipart/form-data">
+      
+      <!-- 1. Satisfaction Slider -->
+      <div class="form-outer">
+        
+        <label for="rating">1. Satisfaction in office environment & culture</label>
+        <input
+          type="range"
+          id="rating"
+          name="satisfaction"
+          min="0"
+          max="10"
+          value="5"
+        />
+       
+        
+      </div>
+
+      <!-- 2. Growth Suggestion -->
+      <div class="form-outer">
+        <label for="suggestion">
+          2. If the company could offer anything to boost your professional growth or tech skills, what would you personally find most helpful?
+        </label>
+        <textarea
+          id="suggestion"
+          name="suggestion"
+          rows="2"
+          placeholder="Example: More mentorship or online certifications..."
+        ></textarea>
+      </div>
+
+      <!-- 3. Opportunities -->
+      <div class="form-outer">
+        <label>3. Opportunities you would love (select multiple)</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="opportunities[]" value="Mentorship program" /> Mentorship program</label>
+          <label><input type="checkbox" name="opportunities[]" value="Internal events/workshops" /> Internal events/workshops</label>
+          <label><input type="checkbox" name="opportunities[]" value="Online courses/training" /> Online courses/training</label>
+          <label><input type="checkbox" name="opportunities[]" value="Skill-building workshops" /> Skill-building workshops</label>
+          <label><input type="checkbox" name="opportunities[]" value="Casual team bonding" /> Casual team bonding</label>
+          <label><input type="checkbox" name="opportunities[]" value="Recognition programs" /> Recognition programs</label>
+          <label><input type="checkbox" name="opportunities[]" value="Career talks" /> Career growth & mentorship talks</label>
+          <label><input type="checkbox" name="opportunities[]" value="Innovation hackathons" /> Innovation hackathons/side‑project days</label>
+        </div>
+      </div>
+
+      <!-- 4. Work‑Life Balance -->
+      <div class="form-outer">
+        <label>4. Do you have work‑life balance?</label>
+        <div class="radio-grid">
+          <label><input type="radio" name="workLife" value="Yes" /> <span>Yes</span></label>
+          <label><input type="radio" name="workLife" value="No" /> <span>No</span></label>
+        </div>
+      </div>
+
+      <!-- 5. Work Culture Satisfaction -->
+      <div class="form-outer">
+        <label>5. Are you satisfied with work culture?</label>
+        <div class="radio-grid">
+          <label><input type="radio" name="workCulture" value="Yes" /> <span>Yes</span></label>
+          <label><input type="radio" name="workCulture" value="No" /> <span>No</span></label>
+        </div>
+      </div>
+
+      <!-- 6. Likes & Dislikes -->
+      <div class="form-outer">
+        <label for="likes">6. Anything you like about your office/work?</label>
+        <input
+          type="text"
+          id="likes"
+          name="likes"
+          placeholder="Ex: Friendly teammates, flexible hours..."
+        />
+      </div>
+
+      <div class="form-outer">
+        <label for="dislikes">7. Anything you dislike about your office/work?</label>
+        <input
+          type="text"
+          id="dislikes"
+          name="dislikes"
+          placeholder="Ex: Long meetings, unclear tasks..."
+        />
+      </div>
+
+      <!-- 8. Final Review -->
+      <div class="form-outer">
+        <label for="review">8. Anything you'd like to share or suggest?</label>
+        <textarea
+          id="review"
+          name="review"
+          rows="3"
+          placeholder="Type your feedback here..."
+        ></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-outer">
+        <button type="submit" id="submitBtn">
+          Submit <span id="loader">⏳</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    by <strong>Harshit Gupta</strong>
+    <a href="https://www.linkedin.com/in/harshitgupta2510/" target="_blank" class="linkedin">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" /> LinkedIn
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+const url = " https://script.google.com/macros/s/AKfycbyhdCKUcDiFeworrCbAAeHZYpmX5rAzN-f4xL8HeVV7nk-bdOickYIwjHuVVt0Oip6JyQ/exec";
+const form = document.getElementById("form");
+const submitBtn = document.getElementById("submitBtn");
+const loader = document.getElementById("loader");
+
+// Slider live update logic
+const ratingInput = document.getElementById("rating");
+const ratingTextSpan = document.getElementById("ratingText");
+
+ratingInput.addEventListener("input", () => {
+  const val = +ratingInput.value;
+  ratingTextSpan.innerText = val <= 3 ? "Poor" : val <= 7 ? "Good" : "Excellent";
+});
+
+// Form submission logic
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  submitBtn.disabled = true;
+  loader.style.display = "inline-block";
+
+  const data = new FormData();
+
+  data.append("satisfaction", ratingInput.value);
+  data.append("growth_suggestion", form.querySelector('textarea[name="growth_suggestion"]')?.value || "");
+
+  const selectedOpportunities = Array.from(
+    form.querySelectorAll('input[name="opportunities[]"]:checked')
+  ).map(cb => cb.value);
+  data.append("opportunities", selectedOpportunities.join(", "));
+
+  data.append("work_life_balance", form.querySelector('input[name="work_life_balance"]:checked')?.value || "");
+  data.append("work_culture", form.querySelector('input[name="work_culture"]:checked')?.value || "");
+  data.append("like", form.querySelector('input[name="like"]')?.value || "");
+  data.append("dislike", form.querySelector('input[name="dislike"]')?.value || "");
+  data.append("feedback", form.querySelector('textarea[name="feedback"]')?.value || "");
+
+  fetch(url, {
+    method: "POST",
+    mode: "cors",
+    body: data
+  })
+    .then((res) => res.text()) // Optional: handle returned JSON/text
+    .then(() => {
+      alert("Form submitted successfully!");
+      form.reset();
+      ratingInput.value = 5;
+      ratingTextSpan.innerText = "Good";
+    })
+    .catch(err => {
+      console.error("Submission error:", err);
+      alert("Error submitting form. Please try again.");
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      loader.style.display = "none";
+    });
+});
