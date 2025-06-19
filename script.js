@@ -1,4 +1,5 @@
-const url = "https://script.google.com/macros/s/AKfycbxCJLg5NEvPYwpqco4JmHKPIax3sw1LLa86DYy7PNtFy3gph6pOfhWZA1IObamFqkZblw/exec";
+const url =
+  "https://script.google.com/macros/s/AKfycbxoAbC1g4WS5E46CrUAdl0BVaLiP0riMvVXt7yBR8v8IKd8hsa3ZhNb8fdR-icJWYrJog/exec";
 
 const form = document.querySelector("#form");
 const submitBtn = document.getElementById("submitBtn");
@@ -20,10 +21,16 @@ form.addEventListener("submit", (e) => {
   loader.style.display = "inline-block";
 
   const data = new FormData(form);
+  const params = new URLSearchParams({ ...data });
+  // fetch(`${url}?${params.toString()}`, {
   fetch(url, {
+    redirect: "follow",
     method: "POST",
-    mode: "cors",
+    mode: "no-cors",
     body: data,
+    // headers: {
+    //   "Content-Type": "text/plain;charset=utf-8",
+    // },
   })
     .then(() => {
       alert("Form submitted successfully!");
@@ -42,4 +49,3 @@ form.addEventListener("submit", (e) => {
     });
 });
 // document.getElementById("form").reset();
-
